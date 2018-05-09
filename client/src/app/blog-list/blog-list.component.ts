@@ -12,6 +12,8 @@ import { tags } from '../common/tags';
 })
 export class BlogListComponent implements AfterContentInit {
 
+  @ViewChild('closeBtn') closeBtn: ElementRef;
+
   public posts;
   public dbPosts;
   public tags;
@@ -40,7 +42,10 @@ export class BlogListComponent implements AfterContentInit {
   }
 
   deletePost(){
-
+    this.blogListService.deletePost(this.postToDelete._id).subscribe(res => {
+      this.getAllPost();
+      this.closeBtn.nativeElement.click();
+    })
   }
 
   setDelete(post: Post){
@@ -53,7 +58,7 @@ export class BlogListComponent implements AfterContentInit {
   }
 
   sortByTags(tag) {
-    
+
   }
 
 }
