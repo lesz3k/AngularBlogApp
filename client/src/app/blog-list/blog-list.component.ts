@@ -1,5 +1,6 @@
 import { Component, AfterContentInit, ViewChild, ElementRef } from '@angular/core';
 import { BlogListService } from './blog-list.service';
+import { Post } from '../models/post.model';
 
 @Component({
   moduleId: module.id,
