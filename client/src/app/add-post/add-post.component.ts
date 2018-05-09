@@ -13,11 +13,8 @@ import 'rxjs/Rx';
 export class AddPostComponent {
 
   @ViewChild('openModal') openModal: ElementRef;
-
   public post : Post;
-
   tags = tags;
-
   checkedList = [];
 
   constructor(private addPostService: AddPostService) {
@@ -25,7 +22,7 @@ export class AddPostComponent {
   }
 
   addPost() {
-    if(this.post.title && this.post.description && !(this.checkedList.length === 0)){
+    if(this.post.title && this.post.description && !(this.checkedList.length == 0)){
         this.post.tags = this.checkedList;
         this.post.date = new Date().toLocaleString();
         //console.log(this.post.tags)
@@ -41,8 +38,11 @@ export class AddPostComponent {
 
   onCheckboxChange(option, event) {
     if(event.target.checked) {
-        console.log(event.target.value);
+        //console.log(event.target.value);
         this.checkedList.push(event.target.value)
+      }
+      else {
+        this.checkedList = this.checkedList.filter(e => e !== event.target.value);
       }
     }
 
