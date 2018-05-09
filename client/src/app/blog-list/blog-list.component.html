@@ -1,3 +1,8 @@
+<div class="tags-sort">
+  <h5>Sort by tags: </h5>
+  <span (click)="sortByTags(tag)"*ngFor="let tag of tags" [class.badge-primary]="tag.isClicked=='yes'" [class.badge-info]="tag.isClicked=='no'" class="badge" >{{tag.tag}}</span>
+</div>
+
 <div class="list-group">
     <a (click)="setPostItem(post)" *ngFor="let post of posts" [routerLink]="['post-entry', post.title]" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
@@ -11,4 +16,24 @@
         </div>
 
     </a>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure ?
+      </div>
+      <div class="modal-footer">
+        <button #closeBtn (click)="unsetDelete()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button (click)="deletePost()" type="button" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
 </div>

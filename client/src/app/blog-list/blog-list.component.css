@@ -1,3 +1,9 @@
 .badge{
   margin-right: 5px;
 }
+.tags-sort{
+  margin-bottom:2rem;
+}
+.tags-sort span{
+  cursor: pointer;
+}
