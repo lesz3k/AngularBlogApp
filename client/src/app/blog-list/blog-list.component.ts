@@ -12,18 +12,25 @@ import { Post } from '../models/post.model';
 export class BlogListComponent implements AfterContentInit {
 
   public posts;
+  public dbPosts;
+  public tags;
+
 
   constructor(private blogListService: BlogListService) {
 
   }
 
   ngAfterContentInit(){
-
-
+    this.getAllPost();
   }
 
   getAllPost(){
-
+    this.blogListService.getAllPost().subscribe(result => {
+        let allPosts = JSON.parse(result['_body'])
+        this.posts = allPosts;
+        this.dbPosts = allPosts;
+        console.log(allPosts)
+    });
   }
 
 }
