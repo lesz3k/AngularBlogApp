@@ -1,0 +1,41 @@
+<div class="add-post">
+    <form>
+        <div class="form-group">
+            <label for="postTitle">Title</label>
+            <input name="title" type="text" [(ngModel)]="post.title" class="form-control" id="postTitle" aria-describedby="postTitle" placeholder="Enter title">
+        </div>
+          <label for="description">Description</label>
+            <div [froalaEditor] name="description" [(ngModel)]="post.description" id="description">
+          </div>
+        <div class="form-group tags-group">
+          <label for="postTags">Tags</label>
+          <div *ngFor="let tag of tags" id="postTags">
+              <label>
+                  <input type="checkbox"
+                         name="{{tag}}"
+                         value="{{tag}}"
+                          (change)="onCheckboxChange(list,$event)"/>
+                  {{tag}}
+              </label>
+          </div>
+        </div>
+
+        <button (click)="addPost()" type="button" class="btn btn-success">Add</button>
+
+    </form>
+</div>
+
+<button #openModal id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#addPostModal">Open Modal</button>
+
+<div class="modal fade" id="addPostModal" tabindex="-1" role="dialog" aria-labelledby="addPostModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Post added</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
