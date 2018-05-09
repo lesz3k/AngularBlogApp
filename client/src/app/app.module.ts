@@ -5,11 +5,14 @@ import { HttpModule } from '@angular/http';
 import { RootComponent } from './root/root.component';
 import { ROUTING } from './app.routing';
 import { BlogListComponent } from './blog-list/blog-list.component';
+import { SinglePostComponent } from './single-post/single-post.component';
+import { CommonService } from './service/common.service';
 
 @NgModule({
   declarations: [
     RootComponent,
-    BlogListComponent
+    BlogListComponent,
+    SinglePostComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +20,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [RootComponent]
 })
 export class AppModule { }
