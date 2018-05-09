@@ -63,7 +63,31 @@ export class BlogListComponent implements AfterContentInit {
     this.commonService.setPost(post)
   }
 
-  sortByTags(tag) {
+  sortByTags(thisTag){
+    let newArr = this.dbPosts.filter(post =>
+      (post.tags.includes(thisTag.tag)) ? post : null
+    )
+    if (thisTag.isClicked == 'no'){
+      this.tags = this.tags.map(elem=>{
+        (elem.tag == thisTag.tag) ? elem.isClicked = 'yes' : null
+        return elem
+      })
+    }
+    else {
+      this.tags = this.tags.map(elem=>{
+        (elem.tag == thisTag.tag) ? elem.isClicked = 'no' : null
+        return elem
+      })
+    }
+    //check if all tags are unclicked and reload the full blog list
+    let allPostsTags = this.tags.map((tag)=>{
+      return tag.isClicked
+    })
+    if(allPostsTags.indexOf('yes') != -1){
+        this.posts = newArr;
+    } else{
+      this.posts = this.dbPosts
+    }
 
   }
 
