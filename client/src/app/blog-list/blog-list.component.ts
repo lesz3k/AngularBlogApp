@@ -69,7 +69,7 @@ export class BlogListComponent implements AfterContentInit {
     )
     if (thisTag.isClicked == 'no'){
       this.tags = this.tags.map(elem=>{
-        (elem.tag == thisTag.tag) ? elem.isClicked = 'yes' : null
+        (elem.tag == thisTag.tag) ? elem.isClicked = 'yes' : elem.isClicked = 'no'
         return elem
       })
     }

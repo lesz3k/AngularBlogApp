@@ -3,7 +3,7 @@ const url = 'mongodb://localhost/blogTestDb'
 const Post = require('./model/post')
 
 module.exports = {
-   addPostsIfDbEmpty: function() {
+   addPostsIfDbEmpty: () => {
      mongoose.connect(url)
      // Get Mongoose to use the global promise library
      mongoose.Promise = global.Promise
