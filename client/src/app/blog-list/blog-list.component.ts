@@ -2,6 +2,7 @@ import { Component, AfterContentInit, ViewChild, ElementRef } from '@angular/cor
 import { BlogListService } from './blog-list.service';
 import { Post } from '../models/post.model';
 import { tags } from '../common/tags';
+import { CommonService } from '../service/common.service';
 
 @Component({
   moduleId: module.id,
@@ -19,7 +20,7 @@ export class BlogListComponent implements AfterContentInit {
   public tags;
   public postToDelete;
 
-  constructor(private blogListService: BlogListService) {
+  constructor(private blogListService: BlogListService, private commonService: CommonService) {
 
   }
 
@@ -55,6 +56,11 @@ export class BlogListComponent implements AfterContentInit {
 
   unsetDelete(){
     this.postToDelete = null;
+  }
+
+  setPostItem(post: Post){
+    this.commonService.getPost()
+    this.commonService.setPost(post)
   }
 
   sortByTags(tag) {
