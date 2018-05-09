@@ -77,3 +77,9 @@ main {
 .nav-item{
   margin-right: 10px;
 }
+
+.btn.active{
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
