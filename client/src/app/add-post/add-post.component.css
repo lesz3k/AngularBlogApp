@@ -1,1 +1,11 @@
-
+.tags-group{
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.tags-group > div {
+  margin-right:10px;
+}
+.tags-group label {
+  width: 100%;
+}
