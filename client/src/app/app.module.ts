@@ -7,12 +7,14 @@ import { ROUTING } from './app.routing';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { SinglePostComponent } from './single-post/single-post.component';
 import { CommonService } from './service/common.service';
+import { AddPostComponent } from './add-post/add-post.component';
 
 @NgModule({
   declarations: [
     RootComponent,
     BlogListComponent,
-    SinglePostComponent
+    SinglePostComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,

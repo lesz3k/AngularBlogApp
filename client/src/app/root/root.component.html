@@ -3,10 +3,10 @@
     <nav>
         <ul class="nav nav-pills">
             <li class="nav-item">
-                  <a routerLinkActive="active" class="btn btn-link" [routerLink]="['/home']">Blog List</a>
+                  <a [routerLink]="['/home']" routerLinkActive="active" class="btn btn-link">Blog List</a>
             </li>
             <li class="nav-item">
-                  <a routerLinkActive="active" href="#" class="btn btn-link">Add Post</a>
+                  <a [routerLink]="['/home/add-post']" routerLinkActive="active" class="btn btn-link">Add Post</a>
             </li>
         </ul>
     </nav>
