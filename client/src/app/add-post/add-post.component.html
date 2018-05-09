@@ -4,11 +4,10 @@
             <label for="postTitle">Title</label>
             <input name="title" type="text" [(ngModel)]="post.title" class="form-control" id="postTitle" aria-describedby="postTitle" placeholder="Enter title">
         </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea name="description" class="form-control" [(ngModel)]="post.description" id="description"></textarea>
+        <div class="form-group post-description">
+          <label for="description">Description</label>
+          <div [froalaEditor] name="description" [(ngModel)]="post.description" id="description"></div>
         </div>
-
         <div class="form-group tags-group">
           <label for="postTags">Tags</label>
           <div *ngFor="let tag of tags" id="postTags">

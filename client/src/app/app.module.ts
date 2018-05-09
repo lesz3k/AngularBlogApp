@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { RootComponent } from './root/root.component';
 import { ROUTING } from './app.routing';
 import { BlogListComponent } from './blog-list/blog-list.component';
@@ -20,7 +21,8 @@ import { AddPostComponent } from './add-post/add-post.component';
     BrowserModule,
     ROUTING,
     FormsModule,
-    HttpModule
+    HttpModule,
+    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot()
   ],
   providers: [CommonService],
   bootstrap: [RootComponent]
