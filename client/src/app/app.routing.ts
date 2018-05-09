@@ -10,7 +10,7 @@ export const AppRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: BlogListComponent },
   { path: 'home/post-entry/:id', component: SinglePostComponent},
-  { path: 'home/add-post', component: AddPostComponent },
+  { path: 'add-post', component: AddPostComponent },
   { path: '', component: RootComponent }
 ];
 

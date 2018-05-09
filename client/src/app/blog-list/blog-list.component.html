@@ -4,18 +4,19 @@
 </div>
 
 <div class="list-group">
-    <a (click)="setPostItem(post)" *ngFor="let post of posts" [routerLink]="['post-entry', post.title]" class="list-group-item list-group-item-action flex-column align-items-start">
+  <div class="post-item" *ngFor="let post of posts">
+    <a (click)="setPostItem(post)" [routerLink]="['post-entry', post.title]" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{post.title}}</h5>
             <small>{{post.date}}</small>
         </div>
         <p class="mb-1" [innerHTML]="post.description"></p>
         <p class="mb-1">Tags: <span *ngFor="let tag of post['tags']" class="badge badge-primary">{{tag}}</span> </p>
-        <div class="float-right">
-            <button type="button" (click)="setDelete(post)" data-toggle="modal" data-target="#deleteModal" title="Delete" class="btn btn-danger" aria-hidden="true">Delete</button>
-        </div>
-
     </a>
+    <div class="delete-post">
+        <button type="button" (click)="setDelete(post)" data-toggle="modal" data-target="#deleteModal" title="Delete" class="btn btn-danger" aria-hidden="true">Delete</button>
+    </div>
+  </div>
 </div>
 
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

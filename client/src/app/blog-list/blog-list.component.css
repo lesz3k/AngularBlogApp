@@ -7,3 +7,13 @@
 .tags-sort span{
   cursor: pointer;
 }
+.post-item {
+  position: relative;
+}
+.post-item .delete-post, .post-item > div{
+  position: absolute;
+  display: block;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
