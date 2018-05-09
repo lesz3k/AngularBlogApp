@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RootComponent } from './root/root.component';
+import { ROUTING } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { RootComponent } from './root/root.component';
   ],
   imports: [
     BrowserModule,
+    ROUTING,
     FormsModule,
     HttpModule
   ],
