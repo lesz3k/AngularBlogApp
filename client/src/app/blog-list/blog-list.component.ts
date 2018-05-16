@@ -88,7 +88,6 @@ export class BlogListComponent implements AfterContentInit {
     } else{
       this.posts = this.dbPosts
     }
-
   }
 
 }
